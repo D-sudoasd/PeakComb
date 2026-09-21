@@ -1,0 +1,8 @@
+"""Hard caps so a full-range spectrum cannot freeze the GUI."""
+
+MAX_COMB_PEAKS = 48
+MAX_PREVIEW_POINTS = 1800
+MAX_FILL_PEAKS = 24
+MAX_LEGEND_PEAKS = 10
+MAX_TABLE_ROWS = 24
+MAX_COND_ELEMENTS = 80_000

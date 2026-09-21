@@ -1,0 +1,8 @@
+matplotlib
+numpy
+openpyxl
+pandas
+PySide6
+PyYAML
+scipy
+pybaselines

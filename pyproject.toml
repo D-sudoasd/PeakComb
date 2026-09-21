@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "peakcomb"
+version = "0.1.0"
+description = "Shared-FWHM PseudoVoigt comb decomposition of broad XRD/SXRD peaks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Delun Gong"},
+]
+keywords = [
+    "xrd",
+    "sxrd",
+    "peak-fitting",
+    "pseudovoigt",
+    "fityk",
+    "internal-stress",
+    "nanodomain",
+    "materials-science",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "openpyxl",
+    "pandas",
+    "PySide6",
+    "PyYAML",
+    "scipy",
+    "pybaselines",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/D-sudoasd/PeakComb"
+Issues = "https://github.com/D-sudoasd/PeakComb/issues"
+Source = "https://github.com/D-sudoasd/PeakComb"
+
+[project.scripts]
+peakcomb = "peakcomb.__main__:main"
+peakcomb-gui = "peakcomb.gui.app:main"
+peakcomb-cli = "peakcomb.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["peakcomb*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

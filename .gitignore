@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+runs/
+.venv/
+venv/
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+_peakcomb_work/
+
+# Local experiment scripts with machine-absolute data paths
+scripts/analyze_nohr_*.py
+

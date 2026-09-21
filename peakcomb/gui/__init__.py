@@ -1,0 +1,1 @@
+"""PeakComb desktop GUI."""
