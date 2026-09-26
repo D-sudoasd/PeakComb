@@ -13,7 +13,7 @@
   <img src="docs/figures/distribution_overlay.png" width="92%" alt="Distribution-mode overlay: shared-FWHM PseudoVoigt comb on a broad XRD peak.">
 </p>
 
-This is a standalone package. It does not modify [PeakTrace](https://github.com/D-sudoasd/PeakTrace). Lua contracts, `.peaks` files, `cfityk` discovery, and *d* / *q* / 2θ units stay aligned with PeakTrace.
+This is a standalone package. It does not modify PeakTrace (a separate peak-fitting project that is not public yet). Lua contracts, `.peaks` files, `cfityk` discovery, and *d* / *q* / 2θ units stay aligned with PeakTrace.
 
 ---
 
