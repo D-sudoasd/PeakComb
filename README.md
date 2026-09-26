@@ -89,6 +89,8 @@ Windows 也可双击仓库里的 `PeakComb_GUI.bat`。
 py -m peakcomb
 # 或
 peakcomb-gui
+# command-line entry, same as py -m peakcomb.cli:
+peakcomb-cli --help
 ```
 
 推荐流程：
