@@ -1,4 +1,36 @@
+<p align="center">
+  <img src="assets/readme/hero.png" width="100%" alt="PeakComb — Shared-width decomposition of broad diffraction peaks / 宽衍射峰的共享峰宽分解. Conceptual illustration / 概念插图。">
+</p>
+
 # PeakComb
+
+**Shared-width decomposition of broad diffraction peaks**
+
+**宽衍射峰的共享峰宽分解**
+
+[Overview / 项目概览](#overview--项目概览) · [Start / 开始使用](#start--开始使用) · [Reference / 详细说明](#reference--详细说明)
+
+## Overview / 项目概览
+
+Represent a broad XRD peak with non-negative pseudo-Voigt components that share one width. Compare a dense fixed-center comb with a small set of bounded discrete components.
+
+用共享峰宽的非负 pseudo-Voigt 分量表示宽 XRD 峰，可比较固定峰位的密梳分解与少量有界离散分量。
+
+- **Distribution mode** — 等间距固定中心，拟合非负高度。
+- **Domain mode** — 少量等宽峰的中心在指定窗口内调整。
+- **Preview and fit** — NNLS 提供预览，Fityk 运行时支持正式拟合路径。
+
+## Start / 开始使用
+
+See the installation and workflow reference below; the existing [distribution example / 分布示例](docs/figures/distribution_overlay.png) shows the output format.
+
+Component area fractions are diffraction-intensity shares. They are not automatically volume fractions and do not uniquely distinguish strain distributions from nanodomains.
+
+分量面积份额表示衍射强度份额，不自动等于体积分数，也不能唯一地区分应变分布与纳米畴。
+
+*Cover: AI-generated conceptual illustration. 封面为 AI 生成的概念插图。*
+
+## Reference / 详细说明
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
