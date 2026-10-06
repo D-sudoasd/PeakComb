@@ -113,7 +113,7 @@ Windows 也可双击仓库里的 `PeakComb_GUI.bat`。
 3. `E:\Vibe_coding\PeakTrace\Fityk\cfityk.exe`（本机 PeakTrace 安装）
 4. `PATH` / Program Files
 
-没有 `cfityk` 时，GUI 预览和 `--nnls-only` 导出仍然可用。
+没有 `cfityk` 时，GUI 预览和 `--nnls-only` 导出仍然可用。Distribution 模式的实际分量数超过 30 时，即使找到 `cfityk` 也保持 NNLS，不进入 Fityk 拟合。
 
 ## 图形界面
 
@@ -200,7 +200,7 @@ PeakComb decomposes one broad XRD/SXRD envelope into a **shared-FWHM** PseudoVoi
 - **Distribution** — locked, equally spaced comb for a continuous *d* distribution (Type II internal strain).
 - **Domain** — a few movable equal-width subpeaks for discrete nanodomain populations.
 
-Live preview is NNLS; the official fitter is `cfityk`. `area_frac` is an intensity share, not an automatic volume fraction. The shared width is the single-domain kernel (instrument + size). This is not Rietveld, Warren–Averbach, or PeakTrace frame tracking.
+Live preview is NNLS; the official fitter is `cfityk`. Distribution fits with more than 30 components remain on NNLS even when `cfityk` is available. `area_frac` is an intensity share, not an automatic volume fraction. The shared width is the single-domain kernel (instrument + size). This is not Rietveld, Warren–Averbach, or PeakTrace frame tracking.
 
 ## License
 
