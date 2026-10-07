@@ -1,53 +1,23 @@
-<p align="center">
-  <img src="assets/readme/hero.png" width="100%" alt="PeakComb — Shared-width decomposition of broad diffraction peaks / 宽衍射峰的共享峰宽分解. Conceptual illustration / 概念插图。">
-</p>
-
 # PeakComb
 
-**Shared-width decomposition of broad diffraction peaks**
+**用共享峰宽的 PseudoVoigt 分量，分解选定 XRD / SXRD 宽峰包络。**
 
-**宽衍射峰的共享峰宽分解**
+A standalone broad-peak decomposition tool with two models: a fixed-center distribution comb and a small set of discrete domain peaks. Python NNLS supplies previews; supported fits can also use Fityk / `cfityk`.
 
-[Overview / 项目概览](#overview--项目概览) · [Start / 开始使用](#start--开始使用) · [Reference / 详细说明](#reference--详细说明)
+[选择模式](#两个模式) · [安装](#安装) · [图形界面](#图形界面) · [合成示例与命令](#命令行) · [导出文件](#导出)
 
-## Overview / 项目概览
+[![MIT](https://img.shields.io/badge/License-MIT-455A64)](LICENSE)
 
-Represent a broad XRD peak with non-negative pseudo-Voigt components that share one width. Compare a dense fixed-center comb with a small set of bounded discrete components.
+![共享峰宽的宽峰分解示例：仓库提供的Distribution模式叠加图](docs/figures/distribution_overlay.png)
 
-用共享峰宽的非负 pseudo-Voigt 分量表示宽 XRD 峰，可比较固定峰位的密梳分解与少量有界离散分量。
+*上图展示仓库示例的模型分解；合成输入见下方命令行示例，不代表实验机制验证。*
 
-- **Distribution mode** — 等间距固定中心，拟合非负高度。
-- **Domain mode** — 少量等宽峰的中心在指定窗口内调整。
-- **Preview and fit** — NNLS 提供预览，Fityk 运行时支持正式拟合路径。
+| 选择 | 模型约束 | 适用的比较问题 |
+| --- | --- | --- |
+| Distribution / 密梳拆分 | 等间距固定中心、共享 FWHM、非负高度 | 检查包络可由怎样的强度分布描述 |
+| Domain / 少数分立峰 | 少量共享峰宽分量，中心可在窗口内移动 | 比较离散亚峰模型 |
 
-## Start / 开始使用
-
-See the installation and workflow reference below; the existing [distribution example / 分布示例](docs/figures/distribution_overlay.png) shows the output format.
-
-Component area fractions are diffraction-intensity shares. They are not automatically volume fractions and do not uniquely distinguish strain distributions from nanodomains.
-
-分量面积份额表示衍射强度份额，不自动等于体积分数，也不能唯一地区分应变分布与纳米畴。
-
-*Cover: AI-generated conceptual illustration. 封面为 AI 生成的概念插图。*
-
-## Reference / 详细说明
-
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GUI + CLI](https://img.shields.io/badge/interface-GUI%20%2B%20CLI-6B5B95)](peakcomb/gui/app.py)
-
-**把一条宽 XRD / SXRD 峰，拆成一组共享半高宽的 PseudoVoigt 小峰。**
-
-面向两类物理图像：内应力引起的连续 *d* 分布，以及 nanodomain 引起的离散晶格种群。
-拟合后端是 [Fityk](https://fityk.nieto.pl/)（`cfityk`）；没有 Fityk 时仍可用非负最小二乘（NNLS）预览并导出。
-
-<p align="center">
-  <img src="docs/figures/distribution_overlay.png" width="92%" alt="Distribution-mode overlay: shared-FWHM PseudoVoigt comb on a broad XRD peak.">
-</p>
-
-This is a standalone package. It does not modify PeakTrace (a separate peak-fitting project that is not public yet). Lua contracts, `.peaks` files, `cfityk` discovery, and *d* / *q* / 2θ units stay aligned with PeakTrace.
-
----
+`area_frac` 是衍射强度份额。应变或应力解释还需要独立参考晶面间距和相应物理假设；峰分解本身不能区分应变、化学或结构来源。
 
 ## 这是干什么的
 
