@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/readme/hero.png" width="100%" alt="PeakComb — Shared-width decomposition of broad diffraction peaks / 宽衍射峰的共享峰宽分解. Conceptual illustration / 概念插图。">
+</p>
+
 # PeakComb
 
 **用共享峰宽的 PseudoVoigt 分量，分解选定 XRD / SXRD 宽峰包络。**
