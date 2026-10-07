@@ -23,6 +23,18 @@ A standalone broad-peak decomposition tool with two models: a fixed-center distr
 
 `area_frac` 是衍射强度份额。应变或应力解释还需要独立参考晶面间距和相应物理假设；峰分解本身不能区分应变、化学或结构来源。
 
+## 原理示意 / Principle schematic
+
+<p align="center">
+  <img src="assets/readme/principle.png" width="100%" alt="固定中心密梳与可移动离散峰的共享峰宽约束 — conceptual schematic / 概念示意图">
+</p>
+
+*概念示意：Distribution 使用等间距固定中心，Domain 允许少量中心在窗口内移动；各分量共享峰宽并具有非负幅度。强度份额不自动等于体积分数，示意曲线不是实验结果或机制验证。*
+
+*Conceptual schematic: Distribution uses equally spaced fixed centers, while Domain allows a few centers to move within a window; components share width and nonnegative amplitudes. Intensity shares are not automatically volume fractions; curves are synthetic, not experimental or mechanistic evidence.*
+
+[查看完整示意图 / View full-size schematic](assets/readme/principle.png)
+
 ## 这是干什么的
 
 实验室或同步辐射 XRD 里，一条 Bragg 峰常常比仪器宽度更宽、甚至劈裂。原因可能是：
